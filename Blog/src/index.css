@@ -1,0 +1,68 @@
+ html {
+            /* background-color: purple; */
+            background-image: url('clouds2.jpg');
+            background-repeat: left top;
+            background-size: 50%;
+            font-weight: normal;
+            font-family: serif;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        div {
+            padding: 3px;
+            font-weight: normal;
+        }
+
+        li {
+            border: 1px solid black;
+            cursor: pointer;
+            margin: 1em;
+            list-style: none;
+            font-weight: bold;
+        }
+
+        .user {
+            background-color: rgba(102, 212, 255, 0.7);
+        }
+
+        .post {
+            background-color: rgba(153, 226, 255, 0.85);
+            text-align: center;
+        }
+
+        .username {
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+        .post div {
+            text-align: left;
+
+        }
+
+        .postbutton {
+            text-align: right;
+        }
+
+        .comment {
+             background-color: rgba(102, 212, 255);
+        }
+
+        .next {
+            text-align: right;
+        }
+
+        .buttonDiv {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .next,
+        #back {
+            cursor: pointer;
+        }
