@@ -3,22 +3,6 @@
 
     const YOUR_TZDB_API_KEY = '6D69CAMKPGJZ';
 
-    //get device location
-    // function deviceLocation() {
-    //     if (!navigator.geolocation) {
-    //         console.log("Geolocation is not supported by your browser");
-    //         return;
-    //     }
-    //     async function success(position) {
-    //         let latitude = position.coords.latitude;
-    //         let longitude = position.coords.longitude;
-    //     }
-    //     function error() {
-    //         console.log("Unable to retrieve your location");
-    //     }
-    //     navigator.geolocation.getCurrentPosition(success, error);
-    // }
- // deviceLocation();
     async function onSuccess(pos) {
         const { latitude, longitude } = pos.coords
 
@@ -35,7 +19,7 @@
         setInterval(() => {
             const now = new Date();
             if (now === adjustedShkia) {
-               alert('Time for Mincha');
+                alert('Time for Mincha');
             }
         }, 1000);
     }
@@ -56,11 +40,11 @@
             return await response.json();
 
         } catch (status) {
-            console.error('OOPS Error',status);
+            console.error('OOPS Error', status);
         }
     }
-//loads the zmanim 
-    async function loadZmanim(latitude,longitude,timezone) {
+    //loads the zmanim 
+    async function loadZmanim(latitude, longitude, timezone) {
         try {
             const response = await fetch(`https://www.hebcal.com/zmanim?cfg=json&latitude=${latitude}&longitude=${longitude}&tzid=${timezone}`);
             if (!response.ok) {
@@ -72,24 +56,6 @@
             console.error('OOPS Error', error);
         }
     }
-
-   
-    
-    // const minutesBeforeShkia = 5;
-    // const minutesBeforeShkiaMl = minutesBeforeShkia * 60 * 1000;
-    // const zmanim = await loadZmanim();
-
-    // const shkia = new Date(zmanim.times.sunset);
-    // const adjustedShkia = new Date(shkia.getTime() - minutesBeforeShkiaMl);
-
-    // setInterval(() => {
-    //     const now = new Date();
-    //     if (now === adjustedShkia) {
-    //         console.log('now is bigger', now);
-    //     }
-    // }, 1000);
-
-
 })();
 
 
