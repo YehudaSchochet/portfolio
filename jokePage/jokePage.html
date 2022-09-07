@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Page</title>
+    <style>
+        body {
+            background-color: green;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        #outerBox {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container {
+            background-color: red;
+            flex: 33.333333;
+            margin: 5px;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        .conHead {
+            text-align: center;
+            font-size: large;
+            font-weight: 800;
+        }
+
+        .display {
+            border: 2px solid black;
+            margin: 2px;
+            padding: 5px;
+            min-height: 75px;
+            width: 33.333;
+            background-color: white;
+            text-align: left;
+        }
+
+        button {
+            margin: 0 auto;
+            margin-bottom: 2px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            font-size: small;
+            font-weight: 600;
+        }
+
+        #fch {
+            font-size: x-large;
+        }
+
+        #faveBs {
+            display: flex;
+        }
+
+        #savedB,
+        #favesB {
+            cursor: pointer;
+            flex: 50%;
+            border: 2px solid black;
+            margin: 2px;
+            font-size: large;
+
+        }
+
+        #savedB:hover,
+        #favesB:hover {
+            font-size: medium;
+            font-weight: 600;
+            border: 3px solid black;
+        }
+
+        #savedB {
+            background-color: lightblue;
+            margin-right: 0px;
+            border-right: 0;
+        }
+
+        #favesB {
+            background-color: lightgray;
+            margin-left: 0px;
+        }
+
+        #faveDisplay {
+            display: none;
+        }
+
+        .jokes:hover {
+            background-color: azure;
+        }
+    </style>
+
+<body>
+    <header>
+        <h1>Joke Page</h1>
+    </header>
+    <div id="outerBox">
+        <div class="container" id="dadJokes">
+            <div class="conHead">Dad Jokes</div>
+            <div class="display" id="dadJDisplay"></div>
+            <button class="saveB">Save</button>
+            <button id="dadJButton">Get Joke</button>
+            <button class="faveB">Favorite</button>
+        </div>
+        <div class="container" id="cnJokes">
+            <div class="conHead">Chuck Norris Jokes</div>
+            <div class="display" id="cnJDisplay"></div>
+            <button class="saveB">Save</button>
+            <button id="cnJButton">Get Joke</button>
+            <button class="faveB">Favorite</button>
+        </div>
+        <div class="container" id="rSQuotes">
+            <div class="conHead">Ron Swanson Quotes</div>
+            <div class="display" id="rsQuotesDisplay"></div>
+            <button class="saveB">Save</button>
+            <button id="rSButton">Get Quote</button>
+            <button class="faveB">Favorite</button>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="conHead" id="fch">Favorites</div>
+        <div id="faveBs">
+            <div id="savedB">Saved</div>
+            <div id="favesB">Favorites</div>
+        </div>
+        <div class="display" id="savedDisplay"></div>
+        <div class="display" id="faveDisplay"></div>
+    </div>
+
+
+    <script src="jokePage.js"></script>
+</body>
+
+</html>
