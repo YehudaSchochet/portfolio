@@ -24,18 +24,22 @@
     dadjButton.addEventListener('click', async () => {
         let stuff = await loadJson("https://icanhazdadjoke.com/ ");
         editDisplay('dadJDisplay', stuff.joke)
+        console.log();
+        removeDisableds(dadjButton)
     });
 
     //loads chuck norris jokes onClick
     cnjButton.addEventListener('click', async () => {
         let stuff = await loadJson("https://api.chucknorris.io/jokes/random");
-        editDisplay('cnJDisplay', stuff.value)
+        editDisplay('cnJDisplay', stuff.value);
+       removeDisableds(cnjButton)
     });
 
     //loads ron swanson quotes onClick
     rSButton.addEventListener('click', async () => {
         let stuff = await loadJson("https://ron-swanson-quotes.herokuapp.com/v2/quotes ");
-        editDisplay('rsQuotesDisplay', stuff)
+        editDisplay('rsQuotesDisplay', stuff);
+        removeDisableds(rSButton);
     });
 
     //switches to saved tab
@@ -72,6 +76,7 @@
                 console.log('saveArr', saveArr);
                 setSaveDisplay(saveArr);
                 saveCounter++;
+                button.setAttribute('disabled', 'disabled')
             }
         })
     }
@@ -88,6 +93,7 @@
                 localStorage.setItem('lastNumber', lastNumber);
                 setFaveDisplayFromLocalStorage(faveArr);
                 lastNumber++;
+                button.setAttribute('disabled', 'disabled')
             }
         })
     }
@@ -143,7 +149,7 @@
         }
     })
 
-
+//goes into local storeage and sets the Fave Display
     function setFaveDisplayFromLocalStorage(localStorageArray) {
         faveDisplay.innerText = ''
         for (let i = 0; i < localStorageArray.length; i++) {
@@ -157,7 +163,7 @@
         }
     }
 
-
+//sets Save Display
     function setSaveDisplay(saveArr) {
         saveDisplay.innerText = ''
         for (let i = 0; i < saveArr.length; i++) {
@@ -185,6 +191,11 @@
         div.style.overflow = 'hidden';
         div.style.margin = '5px';
         return div;
+    }
+
+    function removeDisableds(button){
+        button.parentNode.querySelector('.saveB ').removeAttribute('disabled');
+        button.parentNode.querySelector('.faveB').removeAttribute('disabled');
     }
 
     //function that takes the chosen display, and adds text to it
