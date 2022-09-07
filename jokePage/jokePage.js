@@ -193,6 +193,7 @@
         return div;
     }
 
+    //removes disabled attributes from save and favorite buttons
     function removeDisableds(button){
         button.parentNode.querySelector('.saveB ').removeAttribute('disabled');
         button.parentNode.querySelector('.faveB').removeAttribute('disabled');
