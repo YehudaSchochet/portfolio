@@ -219,7 +219,4 @@
             console.error('OOPS Error', error);
         }
     }
-
-
-
 }());
