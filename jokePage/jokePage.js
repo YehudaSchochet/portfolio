@@ -23,8 +23,7 @@
     //loads dad jokes onClick
     dadjButton.addEventListener('click', async () => {
         let stuff = await loadJson("https://icanhazdadjoke.com/ ");
-        editDisplay('dadJDisplay', stuff.joke)
-        console.log();
+        editDisplay('dadJDisplay', stuff.joke);
         removeDisableds(dadjButton)
     });
 
@@ -72,9 +71,8 @@
         button.addEventListener('click', () => {
             let text = button.closest('.container').querySelector('.display').innerHTML;
             if (text !== '' && saveDisplay.style.display !== 'none') {
-                saveArr.push({ number: saveCounter, joke: text })
-                console.log('saveArr', saveArr);
-                setSaveDisplay(saveArr);
+                saveArr.push({ number: saveCounter, joke: text });
+                setSaveDisplay(saveArr,true);
                 saveCounter++;
                 button.setAttribute('disabled', 'disabled')
             }
@@ -91,7 +89,7 @@
                 faveArr.push({ number: lastNumber, joke: text })
                 localStorage.setItem('arr', JSON.stringify(faveArr));
                 localStorage.setItem('lastNumber', lastNumber);
-                setFaveDisplayFromLocalStorage(faveArr);
+                setFaveDisplayFromLocalStorage(faveArr,true);
                 lastNumber++;
                 button.setAttribute('disabled', 'disabled')
             }
@@ -150,7 +148,7 @@
     })
 
 //goes into local storeage and sets the Fave Display
-    function setFaveDisplayFromLocalStorage(localStorageArray) {
+    function setFaveDisplayFromLocalStorage(localStorageArray, saveOrDelete) {
         faveDisplay.innerText = ''
         for (let i = 0; i < localStorageArray.length; i++) {
             let index = localStorageArray[i];
@@ -160,20 +158,26 @@
             div.innerHTML = index.number + '. ' + index.joke;
             div.append(deleteButton);
             faveDisplay.append(div);
+            if (saveOrDelete) {
+                div.scrollIntoView();
+            }
         }
     }
 
 //sets Save Display
-    function setSaveDisplay(saveArr) {
+    function setSaveDisplay(saveArr,saveOrDelete) {
         saveDisplay.innerText = ''
         for (let i = 0; i < saveArr.length; i++) {
             let index = saveArr[i];
             let div = createDiv();
             let deleteButton = createDeleteButton('saveDeleteBs');
-
             div.innerHTML = index.number + '. ' + index.joke;
             div.append(deleteButton);
             saveDisplay.append(div);
+            if(saveOrDelete){
+                 div.scrollIntoView();
+            }
+           
         }
     }
 

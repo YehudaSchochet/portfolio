@@ -15,9 +15,14 @@
             text-align: center;
         }
 
-        #outerBox {
+         #outerBox{
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+             /* min-height: 82vh; */
+         }
+
+        #jokesBox {
+            display: flex;
         }
 
         .container {
@@ -38,10 +43,11 @@
             border: 2px solid black;
             margin: 2px;
             padding: 5px;
-            min-height: 75px;
+            height: 75px;
             width: 33.333;
             background-color: white;
             text-align: left;
+            overflow-y: auto;
         }
 
         button {
@@ -109,6 +115,7 @@
         <h1>Joke Page</h1>
     </header>
     <div id="outerBox">
+ <div id="jokesBox">
         <div class="container" id="dadJokes">
             <div class="conHead">Dad Jokes</div>
             <div class="display" id="dadJDisplay"></div>
@@ -131,8 +138,7 @@
             <button class="faveB">Favorite</button>
         </div>
     </div>
-    </div>
-    <div class="container">
+     <div class="container" id="fsBox">
         <div class="conHead" id="fch">Favorites</div>
         <div id="faveBs">
             <div id="savedB">Saved</div>
@@ -141,6 +147,11 @@
         <div class="display" id="savedDisplay"></div>
         <div class="display" id="faveDisplay"></div>
     </div>
+    </div>
+   
+    
+   
+    
 
 
     <script src="jokePage.js"></script>
