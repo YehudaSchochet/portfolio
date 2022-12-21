@@ -1,5 +1,5 @@
 body {
-  background-color: green;
+  background-color: aqua;
 }
 
 header{
@@ -8,4 +8,16 @@ header{
 
 #filteredWords{
   word-wrap: break-word;
+}
+
+#grey{
+  background-color: gray;
+}
+
+#green {
+  background-color: green;
+}
+
+#yellow {
+  background-color: yellow;
 }
