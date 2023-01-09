@@ -48,32 +48,13 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset'/*,
-        parser: {
-          dataUrlCondition: {
-            maxSize: 20 * 1024,
-          }
-        }*/
+        type: 'asset'
       },
       {
         test: /\.json5$/i,
         type: 'json',
         parser: {
           parse: json5.parse,
-        }
-      },
-      {
-        test: /\.(csv|tsv)$/i,
-        use: ['csv-loader']
-      },
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
         }
       }
     ]

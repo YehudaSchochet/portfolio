@@ -8,69 +8,73 @@
 
 </head>
 <title>Wordle Helper</title>
+
 <body>
   <header>
     <h1>Wordle Helper</h1>
   </header>
-  <div id="grey">
+  <div class="element" id="grey">
     <h4>Grey</h4>
-    Type letters not to be included:
-    <input type="text" id="excluded" class="inputs">
-  </div>
- 
-  <div id="green">
-  <h4>Green</h4>
-  <div> Type letters to be included:</div>
-  
-  <div>
-    1st letter
-    <input type="text" id="firstGreen" class="inputs" maxlength="1">
-  </div>
-  <div>
-    2nd letter
-    <input type="text" id="secondGreen" class="inputs" maxlength="1">
-  </div>
-  <div>
-    3rd letter
-    <input type="text" id="thirdGreen" class="inputs" maxlength="1">
-  </div>
-  <div>
-    4th letter
-    <input type="text" id="fourthGreen" class="inputs" maxlength="1">
-  </div>
-  <div>
-    5th letter
-    <input type="text" id="fifthGreen" class="inputs" maxlength="1">
-  </div>
+     Type letters not to be included:
+    <div class="inputBox">
+      <label>Letters:</label>
+      <input type="text" id="excluded" class="inputs">
+    </div>
   </div>
 
-  <div id="yellow">
-    <h4>Yellow</h4> 
-    <div> Type letter in spot where it cant be:</div>
- 
-    <div>
-      1st letter
+  <div class="element" id="green">
+    <h4>Green</h4>
+    Type letters to be included:
+    <div class="inputBox">
+      <label>1st letter:</label>
+      <input type="text" id="firstGreen" class="inputs" maxlength="1">
+    </div>
+    <div class="inputBox">
+      <label>2nd letter:</label>
+      <input type="text" id="secondGreen" class="inputs" maxlength="1">
+    </div>
+    <div class="inputBox">
+      <label>3rd letter:</label>
+      <input type="text" id="thirdGreen" class="inputs" maxlength="1">
+    </div>
+    <div class="inputBox">
+      <label>4th letter:</label>
+      <input type="text" id="fourthGreen" class="inputs" maxlength="1">
+    </div>
+    <div class="inputBox">
+      <label>5th letter:</label>
+      <input type="text" id="fifthGreen" class="inputs" maxlength="1">
+    </div>
+  </div>
+
+  <div class="element" id="yellow">
+    <h4>Yellow</h4>
+    Type letter in spot where it cant be
+    <div class="inputBox">
+      <label>1st letter:</label>
       <input type="text" id="firstYellow" class="inputs">
     </div>
-    <div>
-      2nd letter
+    <div class="inputBox">
+      <label>2nd letter:</label>
       <input type="text" id="secondYellow" class="inputs">
     </div>
-    <div>
-      3rd letter
+    <div class="inputBox">
+      <label>3rd letter:</label>
       <input type="text" id="thirdYellow" class="inputs">
     </div>
-    <div>
-      4th letter
+    <div class="inputBox">
+      <label>4th letter:</label>
       <input type="text" id="fourthYellow" class="inputs">
     </div>
-    <div>
-      5th letter
+    <div class="inputBox">
+      <label>5th letter:</label>
       <input type="text" id="fifthYellow" class="inputs">
     </div>
   </div>
+  <div class="element">
   <button id="done">Done</button>
   <button id="clear">Clear</button>
+  </div>
   <div id="filteredWords"></div>
 </body>
 

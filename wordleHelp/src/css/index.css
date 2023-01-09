@@ -1,23 +1,43 @@
 body {
-  background-color: aqua;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-header{
- text-align: center;
+h4 {
+  padding: 0px;
+  margin: 0px;
 }
 
-#filteredWords{
+header {
+  text-align: center;
+}
+
+label {
+  width: 75px;
+  display: inline-block;
+}
+
+.inputBox {
+  margin: 2px;
+}
+
+.element {
+  padding: 10px;
+  margin: auto;
+  width: fit-content;
+}
+
+#filteredWords {
   word-wrap: break-word;
 }
 
-#grey{
-  background-color: gray;
+#grey {
+  background-color: #787C7E;
 }
 
 #green {
-  background-color: green;
+  background-color: #6AAA64;
 }
 
 #yellow {
-  background-color: yellow;
+  background-color: #C9B458;
 }
