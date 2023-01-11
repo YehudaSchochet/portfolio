@@ -4,10 +4,9 @@ import wordlist from 'an-array-of-english-words'
 
 //get list of engish five letter words
 let words = wordlist.filter(word => word.length === 5);
+let filteredWords = $('#filteredWords')
 
 $('#done').on('click', () => {
-  let filteredList = words;
-
   let excludedLetters = $('#excluded').val();
 
   //array of letter in the correct spots
@@ -30,7 +29,7 @@ $('#done').on('click', () => {
   
   //function to to filter the wordlist via callback passed in
   function wordlistFilter(callback) {
-    filteredList = filteredList.filter(callback)
+    words = words.filter(callback)
   }
 
   //filter words with excluded letters
@@ -54,10 +53,14 @@ $('#done').on('click', () => {
     }
 
   }
-  $('#filteredWords').text(filteredList)
+  filteredWords.empty();
+  words.forEach(word=>{
+    $(`<div class="finalWord"> <a href="https://en.wiktionary.org/wiki/${word}" target="_blank"> ${word}</a> </div> `).appendTo(filteredWords)
+  })
 });
 
 $('#clear').on('click', () => {
+  words = wordlist.filter(word => word.length === 5);
   $('.inputs').val('');
-  $('#filteredWords').text('');
+  filteredWords.empty();
 })
